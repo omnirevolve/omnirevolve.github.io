@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>OmniRevolve</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="OmniRevolve — XY plotter with 4-color carousel: STM32F446 + ESP32 (micro-ROS) + ROS 2 UI." />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true, theme: "dark" });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="tag">Robotics • Embedded • ROS 2</div>
+      <h1>OmniRevolve</h1>
+      <div class="btns">
+        <a class="btn" href="https://github.com/omnirevolve">GitHub Organization</a>
+        <a class="btn" href="https://github.com/omnirevolve/omnirevolve">Umbrella Repository</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <p><strong>XY plotter (4-color carousel)</strong> — STM32F446 (TIM4 @ 10&nbsp;kHz), ESP32 (FreeRTOS + micro-ROS over Wi-Fi), ROS&nbsp;2 UI, SPI DMA 512&nbsp;B streaming, CRC protocol.</p>
+
+      <div class="media" style="margin:10px 0 4px">
+        <!-- Replace with real files when ready -->
+        <img src="docs/media/main-demo.gif" alt="Main demo" />
+      </div>
+
+      <h2>System Architecture</h2>
+      <div class="mermaid">
+flowchart LR
+  subgraph PC
+    UI["ROS 2 UI (Tkinter)"]
+    Agent["micro-ROS Agent (UDP)"]
+  end
+
+  subgraph ESP32
+    MROS["micro-ROS Node / FreeRTOS"]
+    OLED1["OLED SSD1309"]
+  end
+
+  subgraph STM32
+    MCU["STM32F446 (NUCLEO-F446RE)"]
+    TIM4["TIM4 @ 10 kHz - step generation"]
+    OLED2["OLED SSD1309"]
+    Endstops["Hall + mechanical endstops"]
+  end
+
+  subgraph Mechanics
+    TB6600["TB6600 drivers"]
+    NEMA["NEMA17 steppers (X/Y/pen conveyor/carousel)"]
+    Head["Carousel + Z carriage + Pen conveyor"]
+  end
+
+  UI -- "/plotter/byte_stream + cmds" --> MROS
+  MROS -- "SPI DMA: 512 B chunks" --> MCU
+  MCU -- "UART status/CRC" --> MROS
+  MROS -- "/plotter/telemetry" --> UI
+  MCU --> TIM4
+  MCU --> Endstops
+  MCU --> OLED2
+  MROS --> OLED1
+  MCU --> TB6600 --> NEMA
+  NEMA --> Head
+      </div>
+
+      <h2>Highlights</h2>
+      <ul>
+        <li>Deterministic stepping with TIM4 @ 10&nbsp;kHz (multi-axis, homing, calibration, endstops).</li>
+        <li>Reliable SPI DMA streaming (512&nbsp;B, double buffering) and CRC-based UART control/status.</li>
+        <li>ESP32 micro-ROS over Wi-Fi; ROS&nbsp;2 UI with live preview and progress (<code>bytes_processed</code>).</li>
+        <li>STM32 firmware refactored C → C++ with clear module boundaries.</li>
+      </ul>
+    </section>
+
+    <section style="margin-top:16px">
+      <h2>Public Repositories</h2>
+      <div class="grid">
+        <div class="card">
+          <h3><a href="https://github.com/omnirevolve/omnirevolve-stm32-firmware">stm32-firmware</a></h3>
+          <p>STM32F446 firmware (TIM4@10kHz, SPI DMA RX, UART CRC, SSD1309).</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://github.com/omnirevolve/omnirevolve-esp32-microros">esp32-microros</a></h3>
+          <p>ESP32 micro-ROS bridge: ROS&nbsp;2 stream → SPI DMA → STM32; telemetry.</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://github.com/omnirevolve/omnirevolve-esp32-core">esp32-core</a></h3>
+          <p>OLED status, keypad, UART (CRC) to STM32; components and drivers.</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://github.com/omnirevolve/omnirevolve-ros2-ui">ros2-ui</a></h3>
+          <p>PC UI (Tkinter): send stream, control, live preview, progress.</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://github.com/omnirevolve/omnirevolve-ros2-messages">ros2-messages</a></h3>
+          <p>Shared ROS&nbsp;2 messages (e.g., <code>PlotterTelemetry</code>).</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://github.com/omnirevolve/omnirevolve-image-processor">image-processor</a></h3>
+          <p>Image → contours → plotter byte stream.</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://github.com/omnirevolve/omnirevolve-protocol">protocol</a></h3>
+          <p>Binary protocol &amp; defines (service/step bytes, EOF=0x3F).</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:16px">
+      <h2>Media</h2>
+      <div class="media">
+        <!-- Replace with real images when available -->
+        <img src="docs/media/plotter.jpg" alt="Plotter hardware" />
+        <img src="docs/media/result.jpg"  alt="Sample output" />
+      </div>
+    </section>
+
+    <footer>
+      <p>© OmniRevolve. MIT license. Built for technical review.</p>
+    </footer>
+  </div>
+</body>
+</html>
