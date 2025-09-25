@@ -23,7 +23,7 @@
     </header>
 
     <section class="hero">
-      <p><strong>XY plotter (4-color carousel)</strong> — STM32F446 (TIM4 @ 10&nbsp;kHz), ESP32 (FreeRTOS + micro-ROS over Wi-Fi), ROS&nbsp;2 UI, SPI DMA 512&nbsp;B streaming, CRC protocol.</p>
+      <p><strong>XY plotter (scalable to 15 colors)</strong> — STM32F446 (TIM4 @ 10&nbsp;kHz), ESP32 (FreeRTOS + micro-ROS over Wi-Fi), ROS&nbsp;2 UI, SPI DMA 512&nbsp;B streaming, CRC protocol.</p>
 
       <div class="media" style="margin:10px 0 4px">
         <!-- Replace with real files when ready -->
@@ -112,17 +112,46 @@ flowchart LR
     </section>
 
     <section style="margin-top:16px">
-      <h2>Media</h2>
-      <div class="media">
-        <!-- Replace with real images when available -->
-        <img src="docs/media/plotter.jpg" alt="Plotter hardware" />
-        <img src="docs/media/result.jpg"  alt="Sample output" />
-      </div>
+      
+      <section style="margin-top:16px">
+        <h2>Photos</h2>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:18px">
+          <figure style="margin:0;text-align:center;max-width:980px;width:100%">
+            <img src="docs/media/plotter.jpg" alt="OmniRevolve plotter hardware" style="width:100%;height:auto;border-radius:8px;">
+            <figcaption style="margin-top:8px;color:#666">OmniRevolve plotter — 4-color carousel (mechanically scalable to 15 colors)</figcaption>
+          </figure>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;max-width:980px;width:100%">
+            <figure style="flex:1 1 360px;max-width:480px;margin:0;text-align:center">
+              <img src="docs/media/result.jpg" alt="Sample output #1" style="width:100%;height:auto;border-radius:8px;">
+              <figcaption style="margin-top:8px;color:#666">Sample output #1</figcaption>
+            </figure>
+            <figure style="flex:1 1 360px;max-width:480px;margin:0;text-align:center">
+              <img src="docs/media/result-2.jpg" alt="Sample output #2" style="width:100%;height:auto;border-radius:8px;">
+              <figcaption style="margin-top:8px;color:#666">Sample output #2</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <h2>Videos</h2>
+      <p>Timelapse demo #1, pen carousel change, and full process (PC + hardware + plotting):</p>
+      <p style="text-align:center">
+        <a href="https://www.youtube.com/watch?v=epHM4n3US48" style="display:inline-block;margin:4px">
+          <img src="https://img.youtube.com/vi/epHM4n3US48/hqdefault.jpg" alt="Timelapse demo #1 (printing)" style="width:32%;min-width:220px;max-width:360px">
+        </a>
+        <a href="https://www.youtube.com/watch?v=NMgnAYHxDm4" style="display:inline-block;margin:4px">
+          <img src="https://img.youtube.com/vi/NMgnAYHxDm4/hqdefault.jpg" alt="Pen carousel change" style="width:32%;min-width:220px;max-width:360px">
+        </a>
+        <a href="https://www.youtube.com/watch?v=BMJWWeqkJn0" style="display:inline-block;margin:4px">
+          <img src="https://img.youtube.com/vi/BMJWWeqkJn0/hqdefault.jpg" alt="Full process: PC + hardware + plotting" style="width:32%;min-width:220px;max-width:360px">
+        </a>
+      </p>
+
     </section>
 
-    <footer>
-      <p>© OmniRevolve. MIT license. Built for technical review.</p>
-    </footer>
+    <p>© OmniRevolve. MIT license. </p>
+
+
   </div>
 </body>
 </html>
