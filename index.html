@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <title>OmniRevolve</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="OmniRevolve — XY plotter with 4-color carousel: STM32F446 + ESP32 (micro-ROS) + ROS 2 UI." />
+  <meta name="description" content="OmniRevolve — XY plotter with 4-color carousel: STM32F446 + ESP32 (micro-ROS) + ROS 2 UI.; deterministic 10 kHz control loop (TIM4 ISR)." />
   <link rel="stylesheet" href="assets/styles.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
@@ -23,12 +23,7 @@
     </header>
 
     <section class="hero">
-      <p><strong>XY plotter (scalable to 15 colors)</strong> — STM32F446 (TIM4 @ 10&nbsp;kHz), ESP32 (FreeRTOS + micro-ROS over Wi-Fi), ROS&nbsp;2 UI, SPI DMA 512&nbsp;B streaming, CRC protocol.</p>
-
-      <div class="media" style="margin:10px 0 4px">
-        <!-- Replace with real files when ready -->
-        <img src="docs/media/main-demo.gif" alt="Main demo" />
-      </div>
+      <p><strong>XY plotter (scalable to 15 colors)</strong> — STM32F446 with a <strong>deterministic 10&nbsp;kHz control loop (TIM4 ISR)</strong> driving multi-axis step generation, endstop handling, homing/calibration, <strong>stream timing and an action FSM</strong> (tap, color change, pen up/down); ESP32 (FreeRTOS + micro-ROS over Wi‑Fi), ROS&nbsp;2 UI, SPI DMA 512&nbsp;B streaming, CRC protocol.</p>
 
       <h2>System Architecture</h2>
       <div class="mermaid">
@@ -70,7 +65,7 @@ flowchart LR
 
       <h2>Highlights</h2>
       <ul>
-        <li>Deterministic stepping with TIM4 @ 10&nbsp;kHz (multi-axis, homing, calibration, endstops).</li>
+        <li>Deterministic <strong>10&nbsp;kHz control loop (TIM4 ISR)</strong>: multi-axis steps, endstops, homing/calibration, <strong>stream timing & action FSM</strong> (tap / color change / pen up-down).</li>
         <li>Reliable SPI DMA streaming (512&nbsp;B, double buffering) and CRC-based UART control/status.</li>
         <li>ESP32 micro-ROS over Wi-Fi; ROS&nbsp;2 UI with live preview and progress (<code>bytes_processed</code>).</li>
         <li>STM32 firmware refactored C → C++ with clear module boundaries.</li>
@@ -147,7 +142,12 @@ flowchart LR
         </a>
       </p>
 
+    
+    <section style="margin-top:16px">
+      <h2>Contact</h2>
+      <p>Questions or collaboration proposals: <a href="mailto:userofbgtu@gmail.com">userofbgtu@gmail.com</a></p>
     </section>
+</section>
 
     <p>© OmniRevolve. MIT license. </p>
 
