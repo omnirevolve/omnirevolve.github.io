@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A1–A2 Vocabulary Check</title>
+<style>
+  :root { --bg:#f7f7f7; --card:#fff; --text:#1b1b1f; --muted:#666; --line:#ddd; --accent:#2b5cff; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.45; }
+  header { position: sticky; top:0; z-index:5; background:rgba(255,255,255,.96); border-bottom:1px solid var(--line); padding:14px 16px; }
+  h1 { font-size:20px; margin:0 0 4px; }
+  .sub { font-size:14px; color:var(--muted); }
+  main { padding:14px; max-width:760px; margin:0 auto 90px; }
+  .intro, .question, .result-card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; margin:12px 0; box-shadow:0 1px 3px rgba(0,0,0,.04); }
+  .qtop { display:flex; gap:10px; align-items:flex-start; margin-bottom:12px; }
+  .num { min-width:34px; height:34px; border-radius:50%; background:#eeeeef; display:flex; align-items:center; justify-content:center; font-weight:700; }
+  .word { font-size:22px; font-weight:800; letter-spacing:.2px; }
+  .hint { font-size:13px; color:var(--muted); margin-top:3px; }
+  label.option { display:flex; gap:12px; align-items:flex-start; min-height:48px; padding:12px; border:1px solid var(--line); border-radius:12px; margin:8px 0; background:#fff; }
+  label.option:active { background:#f0f3ff; }
+  input[type="radio"] { width:23px; height:23px; margin:0; flex:0 0 auto; accent-color:var(--accent); }
+  .letter { font-weight:700; margin-right:4px; }
+  .actions { position:fixed; left:0; right:0; bottom:0; background:rgba(255,255,255,.97); border-top:1px solid var(--line); padding:10px 14px; display:flex; gap:8px; justify-content:center; }
+  button { font-size:16px; border:0; border-radius:12px; padding:12px 14px; font-weight:700; }
+  .primary { background:var(--accent); color:#fff; }
+  textarea { width:100%; min-height:95px; margin-top:10px; border:1px solid var(--line); border-radius:12px; padding:12px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:16px; }
+  .small { font-size:13px; color:var(--muted); }
+  @media (max-width:420px) { .word { font-size:21px; } main { padding:10px; } .question { padding:14px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>A1–A2 Vocabulary Check</h1>
+  <div class="sub">60 слов · 5 вариантов · ответы сохраняются на этом устройстве</div>
+</header>
+<main>
+  <section class="intro">
+    <p><strong>Инструкция:</strong> выберите наиболее близкое значение слова.</p>
+    <p class="small">Можно отвечать не на все вопросы. При повторном открытии в том же браузере выбранные ответы восстановятся.</p>
+  </section>
+  <form id="quiz">
+<section class="question" id="q1">
+  <div class="qtop"><div class="num">1</div><div><div class="word">often</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q1" value="a"><span><span class="letter">a)</span> рано</span></label>
+  <label class="option"><input type="radio" name="q1" value="b"><span><span class="letter">b)</span> часто</span></label>
+  <label class="option"><input type="radio" name="q1" value="c"><span><span class="letter">c)</span> рядом</span></label>
+  <label class="option"><input type="radio" name="q1" value="d"><span><span class="letter">d)</span> снова</span></label>
+  <label class="option"><input type="radio" name="q1" value="e"><span><span class="letter">e)</span> почти</span></label>
+</section>
+<section class="question" id="q2">
+  <div class="qtop"><div class="num">2</div><div><div class="word">ready</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q2" value="a"><span><span class="letter">a)</span> готовый</span></label>
+  <label class="option"><input type="radio" name="q2" value="b"><span><span class="letter">b)</span> уставший</span></label>
+  <label class="option"><input type="radio" name="q2" value="c"><span><span class="letter">c)</span> дешёвый</span></label>
+  <label class="option"><input type="radio" name="q2" value="d"><span><span class="letter">d)</span> грязный</span></label>
+  <label class="option"><input type="radio" name="q2" value="e"><span><span class="letter">e)</span> важный</span></label>
+</section>
+<section class="question" id="q3">
+  <div class="qtop"><div class="num">3</div><div><div class="word">reason</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q3" value="a"><span><span class="letter">a)</span> ошибка</span></label>
+  <label class="option"><input type="radio" name="q3" value="b"><span><span class="letter">b)</span> вопрос</span></label>
+  <label class="option"><input type="radio" name="q3" value="c"><span><span class="letter">c)</span> причина</span></label>
+  <label class="option"><input type="radio" name="q3" value="d"><span><span class="letter">d)</span> совет</span></label>
+  <label class="option"><input type="radio" name="q3" value="e"><span><span class="letter">e)</span> выбор</span></label>
+</section>
+<section class="question" id="q4">
+  <div class="qtop"><div class="num">4</div><div><div class="word">busy</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q4" value="a"><span><span class="letter">a)</span> голодный</span></label>
+  <label class="option"><input type="radio" name="q4" value="b"><span><span class="letter">b)</span> далёкий</span></label>
+  <label class="option"><input type="radio" name="q4" value="c"><span><span class="letter">c)</span> свободный</span></label>
+  <label class="option"><input type="radio" name="q4" value="d"><span><span class="letter">d)</span> занятый</span></label>
+  <label class="option"><input type="radio" name="q4" value="e"><span><span class="letter">e)</span> осторожный</span></label>
+</section>
+<section class="question" id="q5">
+  <div class="qtop"><div class="num">5</div><div><div class="word">near</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q5" value="a"><span><span class="letter">a)</span> вместо</span></label>
+  <label class="option"><input type="radio" name="q5" value="b"><span><span class="letter">b)</span> после</span></label>
+  <label class="option"><input type="radio" name="q5" value="c"><span><span class="letter">c)</span> между</span></label>
+  <label class="option"><input type="radio" name="q5" value="d"><span><span class="letter">d)</span> почти</span></label>
+  <label class="option"><input type="radio" name="q5" value="e"><span><span class="letter">e)</span> рядом</span></label>
+</section>
+<section class="question" id="q6">
+  <div class="qtop"><div class="num">6</div><div><div class="word">early</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q6" value="a"><span><span class="letter">a)</span> рано</span></label>
+  <label class="option"><input type="radio" name="q6" value="b"><span><span class="letter">b)</span> поздно</span></label>
+  <label class="option"><input type="radio" name="q6" value="c"><span><span class="letter">c)</span> обычно</span></label>
+  <label class="option"><input type="radio" name="q6" value="d"><span><span class="letter">d)</span> сразу</span></label>
+  <label class="option"><input type="radio" name="q6" value="e"><span><span class="letter">e)</span> редко</span></label>
+</section>
+<section class="question" id="q7">
+  <div class="qtop"><div class="num">7</div><div><div class="word">difficult</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q7" value="a"><span><span class="letter">a)</span> чистый</span></label>
+  <label class="option"><input type="radio" name="q7" value="b"><span><span class="letter">b)</span> трудный</span></label>
+  <label class="option"><input type="radio" name="q7" value="c"><span><span class="letter">c)</span> дешёвый</span></label>
+  <label class="option"><input type="radio" name="q7" value="d"><span><span class="letter">d)</span> тихий</span></label>
+  <label class="option"><input type="radio" name="q7" value="e"><span><span class="letter">e)</span> лёгкий</span></label>
+</section>
+<section class="question" id="q8">
+  <div class="qtop"><div class="num">8</div><div><div class="word">answer</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q8" value="a"><span><span class="letter">a)</span> совет</span></label>
+  <label class="option"><input type="radio" name="q8" value="b"><span><span class="letter">b)</span> проблема</span></label>
+  <label class="option"><input type="radio" name="q8" value="c"><span><span class="letter">c)</span> ответ</span></label>
+  <label class="option"><input type="radio" name="q8" value="d"><span><span class="letter">d)</span> причина</span></label>
+  <label class="option"><input type="radio" name="q8" value="e"><span><span class="letter">e)</span> место</span></label>
+</section>
+<section class="question" id="q9">
+  <div class="qtop"><div class="num">9</div><div><div class="word">tired</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q9" value="a"><span><span class="letter">a)</span> свободный</span></label>
+  <label class="option"><input type="radio" name="q9" value="b"><span><span class="letter">b)</span> готовый</span></label>
+  <label class="option"><input type="radio" name="q9" value="c"><span><span class="letter">c)</span> важный</span></label>
+  <label class="option"><input type="radio" name="q9" value="d"><span><span class="letter">d)</span> уставший</span></label>
+  <label class="option"><input type="radio" name="q9" value="e"><span><span class="letter">e)</span> осторожный</span></label>
+</section>
+<section class="question" id="q10">
+  <div class="qtop"><div class="num">10</div><div><div class="word">cheap</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q10" value="a"><span><span class="letter">a)</span> похожий</span></label>
+  <label class="option"><input type="radio" name="q10" value="b"><span><span class="letter">b)</span> далёкий</span></label>
+  <label class="option"><input type="radio" name="q10" value="c"><span><span class="letter">c)</span> чистый</span></label>
+  <label class="option"><input type="radio" name="q10" value="d"><span><span class="letter">d)</span> быстрый</span></label>
+  <label class="option"><input type="radio" name="q10" value="e"><span><span class="letter">e)</span> дешёвый</span></label>
+</section>
+<section class="question" id="q11">
+  <div class="qtop"><div class="num">11</div><div><div class="word">important</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q11" value="a"><span><span class="letter">a)</span> важный</span></label>
+  <label class="option"><input type="radio" name="q11" value="b"><span><span class="letter">b)</span> поздний</span></label>
+  <label class="option"><input type="radio" name="q11" value="c"><span><span class="letter">c)</span> грязный</span></label>
+  <label class="option"><input type="radio" name="q11" value="d"><span><span class="letter">d)</span> голодный</span></label>
+  <label class="option"><input type="radio" name="q11" value="e"><span><span class="letter">e)</span> пустой</span></label>
+</section>
+<section class="question" id="q12">
+  <div class="qtop"><div class="num">12</div><div><div class="word">problem</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q12" value="a"><span><span class="letter">a)</span> причина</span></label>
+  <label class="option"><input type="radio" name="q12" value="b"><span><span class="letter">b)</span> проблема</span></label>
+  <label class="option"><input type="radio" name="q12" value="c"><span><span class="letter">c)</span> вопрос</span></label>
+  <label class="option"><input type="radio" name="q12" value="d"><span><span class="letter">d)</span> ответ</span></label>
+  <label class="option"><input type="radio" name="q12" value="e"><span><span class="letter">e)</span> идея</span></label>
+</section>
+<section class="question" id="q13">
+  <div class="qtop"><div class="num">13</div><div><div class="word">careful</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q13" value="a"><span><span class="letter">a)</span> злой</span></label>
+  <label class="option"><input type="radio" name="q13" value="b"><span><span class="letter">b)</span> спокойный</span></label>
+  <label class="option"><input type="radio" name="q13" value="c"><span><span class="letter">c)</span> осторожный</span></label>
+  <label class="option"><input type="radio" name="q13" value="d"><span><span class="letter">d)</span> готовый</span></label>
+  <label class="option"><input type="radio" name="q13" value="e"><span><span class="letter">e)</span> занятый</span></label>
+</section>
+<section class="question" id="q14">
+  <div class="qtop"><div class="num">14</div><div><div class="word">expensive</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q14" value="a"><span><span class="letter">a)</span> важный</span></label>
+  <label class="option"><input type="radio" name="q14" value="b"><span><span class="letter">b)</span> дешёвый</span></label>
+  <label class="option"><input type="radio" name="q14" value="c"><span><span class="letter">c)</span> простой</span></label>
+  <label class="option"><input type="radio" name="q14" value="d"><span><span class="letter">d)</span> дорогой</span></label>
+  <label class="option"><input type="radio" name="q14" value="e"><span><span class="letter">e)</span> поздний</span></label>
+</section>
+<section class="question" id="q15">
+  <div class="qtop"><div class="num">15</div><div><div class="word">almost</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q15" value="a"><span><span class="letter">a)</span> всегда</span></label>
+  <label class="option"><input type="radio" name="q15" value="b"><span><span class="letter">b)</span> никогда</span></label>
+  <label class="option"><input type="radio" name="q15" value="c"><span><span class="letter">c)</span> часто</span></label>
+  <label class="option"><input type="radio" name="q15" value="d"><span><span class="letter">d)</span> сначала</span></label>
+  <label class="option"><input type="radio" name="q15" value="e"><span><span class="letter">e)</span> почти</span></label>
+</section>
+<section class="question" id="q16">
+  <div class="qtop"><div class="num">16</div><div><div class="word">usually</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q16" value="a"><span><span class="letter">a)</span> обычно</span></label>
+  <label class="option"><input type="radio" name="q16" value="b"><span><span class="letter">b)</span> снова</span></label>
+  <label class="option"><input type="radio" name="q16" value="c"><span><span class="letter">c)</span> вместо</span></label>
+  <label class="option"><input type="radio" name="q16" value="d"><span><span class="letter">d)</span> вдруг</span></label>
+  <label class="option"><input type="radio" name="q16" value="e"><span><span class="letter">e)</span> достаточно</span></label>
+</section>
+<section class="question" id="q17">
+  <div class="qtop"><div class="num">17</div><div><div class="word">clean</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q17" value="a"><span><span class="letter">a)</span> грязный</span></label>
+  <label class="option"><input type="radio" name="q17" value="b"><span><span class="letter">b)</span> чистый</span></label>
+  <label class="option"><input type="radio" name="q17" value="c"><span><span class="letter">c)</span> дешёвый</span></label>
+  <label class="option"><input type="radio" name="q17" value="d"><span><span class="letter">d)</span> похожий</span></label>
+  <label class="option"><input type="radio" name="q17" value="e"><span><span class="letter">e)</span> поздний</span></label>
+</section>
+<section class="question" id="q18">
+  <div class="qtop"><div class="num">18</div><div><div class="word">far</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q18" value="a"><span><span class="letter">a)</span> снаружи</span></label>
+  <label class="option"><input type="radio" name="q18" value="b"><span><span class="letter">b)</span> внутри</span></label>
+  <label class="option"><input type="radio" name="q18" value="c"><span><span class="letter">c)</span> далеко</span></label>
+  <label class="option"><input type="radio" name="q18" value="d"><span><span class="letter">d)</span> рядом</span></label>
+  <label class="option"><input type="radio" name="q18" value="e"><span><span class="letter">e)</span> между</span></label>
+</section>
+<section class="question" id="q19">
+  <div class="qtop"><div class="num">19</div><div><div class="word">question</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q19" value="a"><span><span class="letter">a)</span> ответ</span></label>
+  <label class="option"><input type="radio" name="q19" value="b"><span><span class="letter">b)</span> причина</span></label>
+  <label class="option"><input type="radio" name="q19" value="c"><span><span class="letter">c)</span> совет</span></label>
+  <label class="option"><input type="radio" name="q19" value="d"><span><span class="letter">d)</span> вопрос</span></label>
+  <label class="option"><input type="radio" name="q19" value="e"><span><span class="letter">e)</span> ошибка</span></label>
+</section>
+<section class="question" id="q20">
+  <div class="qtop"><div class="num">20</div><div><div class="word">hungry</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q20" value="a"><span><span class="letter">a)</span> усталый</span></label>
+  <label class="option"><input type="radio" name="q20" value="b"><span><span class="letter">b)</span> готовый</span></label>
+  <label class="option"><input type="radio" name="q20" value="c"><span><span class="letter">c)</span> занятый</span></label>
+  <label class="option"><input type="radio" name="q20" value="d"><span><span class="letter">d)</span> осторожный</span></label>
+  <label class="option"><input type="radio" name="q20" value="e"><span><span class="letter">e)</span> голодный</span></label>
+</section>
+<section class="question" id="q21">
+  <div class="qtop"><div class="num">21</div><div><div class="word">mistake</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q21" value="a"><span><span class="letter">a)</span> ошибка</span></label>
+  <label class="option"><input type="radio" name="q21" value="b"><span><span class="letter">b)</span> выбор</span></label>
+  <label class="option"><input type="radio" name="q21" value="c"><span><span class="letter">c)</span> совет</span></label>
+  <label class="option"><input type="radio" name="q21" value="d"><span><span class="letter">d)</span> встреча</span></label>
+  <label class="option"><input type="radio" name="q21" value="e"><span><span class="letter">e)</span> причина</span></label>
+</section>
+<section class="question" id="q22">
+  <div class="qtop"><div class="num">22</div><div><div class="word">decide</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q22" value="a"><span><span class="letter">a)</span> объяснять</span></label>
+  <label class="option"><input type="radio" name="q22" value="b"><span><span class="letter">b)</span> решать</span></label>
+  <label class="option"><input type="radio" name="q22" value="c"><span><span class="letter">c)</span> избегать</span></label>
+  <label class="option"><input type="radio" name="q22" value="d"><span><span class="letter">d)</span> улучшать</span></label>
+  <label class="option"><input type="radio" name="q22" value="e"><span><span class="letter">e)</span> занимать</span></label>
+</section>
+<section class="question" id="q23">
+  <div class="qtop"><div class="num">23</div><div><div class="word">enough</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q23" value="a"><span><span class="letter">a)</span> почти</span></label>
+  <label class="option"><input type="radio" name="q23" value="b"><span><span class="letter">b)</span> редко</span></label>
+  <label class="option"><input type="radio" name="q23" value="c"><span><span class="letter">c)</span> достаточно</span></label>
+  <label class="option"><input type="radio" name="q23" value="d"><span><span class="letter">d)</span> вместе</span></label>
+  <label class="option"><input type="radio" name="q23" value="e"><span><span class="letter">e)</span> вместо</span></label>
+</section>
+<section class="question" id="q24">
+  <div class="qtop"><div class="num">24</div><div><div class="word">advice</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q24" value="a"><span><span class="letter">a)</span> ошибка</span></label>
+  <label class="option"><input type="radio" name="q24" value="b"><span><span class="letter">b)</span> причина</span></label>
+  <label class="option"><input type="radio" name="q24" value="c"><span><span class="letter">c)</span> выбор</span></label>
+  <label class="option"><input type="radio" name="q24" value="d"><span><span class="letter">d)</span> совет</span></label>
+  <label class="option"><input type="radio" name="q24" value="e"><span><span class="letter">e)</span> вопрос</span></label>
+</section>
+<section class="question" id="q25">
+  <div class="qtop"><div class="num">25</div><div><div class="word">avoid</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q25" value="a"><span><span class="letter">a)</span> помнить</span></label>
+  <label class="option"><input type="radio" name="q25" value="b"><span><span class="letter">b)</span> соглашаться</span></label>
+  <label class="option"><input type="radio" name="q25" value="c"><span><span class="letter">c)</span> объяснять</span></label>
+  <label class="option"><input type="radio" name="q25" value="d"><span><span class="letter">d)</span> занимать</span></label>
+  <label class="option"><input type="radio" name="q25" value="e"><span><span class="letter">e)</span> избегать</span></label>
+</section>
+<section class="question" id="q26">
+  <div class="qtop"><div class="num">26</div><div><div class="word">agree</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q26" value="a"><span><span class="letter">a)</span> соглашаться</span></label>
+  <label class="option"><input type="radio" name="q26" value="b"><span><span class="letter">b)</span> забывать</span></label>
+  <label class="option"><input type="radio" name="q26" value="c"><span><span class="letter">c)</span> разрешать</span></label>
+  <label class="option"><input type="radio" name="q26" value="d"><span><span class="letter">d)</span> выбирать</span></label>
+  <label class="option"><input type="radio" name="q26" value="e"><span><span class="letter">e)</span> занимать</span></label>
+</section>
+<section class="question" id="q27">
+  <div class="qtop"><div class="num">27</div><div><div class="word">explain</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q27" value="a"><span><span class="letter">a)</span> избегать</span></label>
+  <label class="option"><input type="radio" name="q27" value="b"><span><span class="letter">b)</span> объяснять</span></label>
+  <label class="option"><input type="radio" name="q27" value="c"><span><span class="letter">c)</span> улучшать</span></label>
+  <label class="option"><input type="radio" name="q27" value="d"><span><span class="letter">d)</span> решать</span></label>
+  <label class="option"><input type="radio" name="q27" value="e"><span><span class="letter">e)</span> одалживать</span></label>
+</section>
+<section class="question" id="q28">
+  <div class="qtop"><div class="num">28</div><div><div class="word">possible</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q28" value="a"><span><span class="letter">a)</span> важный</span></label>
+  <label class="option"><input type="radio" name="q28" value="b"><span><span class="letter">b)</span> опасный</span></label>
+  <label class="option"><input type="radio" name="q28" value="c"><span><span class="letter">c)</span> возможный</span></label>
+  <label class="option"><input type="radio" name="q28" value="d"><span><span class="letter">d)</span> похожий</span></label>
+  <label class="option"><input type="radio" name="q28" value="e"><span><span class="letter">e)</span> достаточный</span></label>
+</section>
+<section class="question" id="q29">
+  <div class="qtop"><div class="num">29</div><div><div class="word">probably</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q29" value="a"><span><span class="letter">a)</span> сразу</span></label>
+  <label class="option"><input type="radio" name="q29" value="b"><span><span class="letter">b)</span> вместо</span></label>
+  <label class="option"><input type="radio" name="q29" value="c"><span><span class="letter">c)</span> между</span></label>
+  <label class="option"><input type="radio" name="q29" value="d"><span><span class="letter">d)</span> вероятно</span></label>
+  <label class="option"><input type="radio" name="q29" value="e"><span><span class="letter">e)</span> почти никогда</span></label>
+</section>
+<section class="question" id="q30">
+  <div class="qtop"><div class="num">30</div><div><div class="word">borrow</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q30" value="a"><span><span class="letter">a)</span> покупать</span></label>
+  <label class="option"><input type="radio" name="q30" value="b"><span><span class="letter">b)</span> забывать</span></label>
+  <label class="option"><input type="radio" name="q30" value="c"><span><span class="letter">c)</span> выбирать</span></label>
+  <label class="option"><input type="radio" name="q30" value="d"><span><span class="letter">d)</span> позволять</span></label>
+  <label class="option"><input type="radio" name="q30" value="e"><span><span class="letter">e)</span> брать взаймы</span></label>
+</section>
+<section class="question" id="q31">
+  <div class="qtop"><div class="num">31</div><div><div class="word">lend</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q31" value="a"><span><span class="letter">a)</span> давать взаймы</span></label>
+  <label class="option"><input type="radio" name="q31" value="b"><span><span class="letter">b)</span> избегать</span></label>
+  <label class="option"><input type="radio" name="q31" value="c"><span><span class="letter">c)</span> проверять</span></label>
+  <label class="option"><input type="radio" name="q31" value="d"><span><span class="letter">d)</span> улучшать</span></label>
+  <label class="option"><input type="radio" name="q31" value="e"><span><span class="letter">e)</span> соглашаться</span></label>
+</section>
+<section class="question" id="q32">
+  <div class="qtop"><div class="num">32</div><div><div class="word">allow</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q32" value="a"><span><span class="letter">a)</span> запрещать</span></label>
+  <label class="option"><input type="radio" name="q32" value="b"><span><span class="letter">b)</span> разрешать</span></label>
+  <label class="option"><input type="radio" name="q32" value="c"><span><span class="letter">c)</span> обещать</span></label>
+  <label class="option"><input type="radio" name="q32" value="d"><span><span class="letter">d)</span> пытаться</span></label>
+  <label class="option"><input type="radio" name="q32" value="e"><span><span class="letter">e)</span> объяснять</span></label>
+</section>
+<section class="question" id="q33">
+  <div class="qtop"><div class="num">33</div><div><div class="word">choose</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q33" value="a"><span><span class="letter">a)</span> менять</span></label>
+  <label class="option"><input type="radio" name="q33" value="b"><span><span class="letter">b)</span> помнить</span></label>
+  <label class="option"><input type="radio" name="q33" value="c"><span><span class="letter">c)</span> выбирать</span></label>
+  <label class="option"><input type="radio" name="q33" value="d"><span><span class="letter">d)</span> терять</span></label>
+  <label class="option"><input type="radio" name="q33" value="e"><span><span class="letter">e)</span> ждать</span></label>
+</section>
+<section class="question" id="q34">
+  <div class="qtop"><div class="num">34</div><div><div class="word">improve</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q34" value="a"><span><span class="letter">a)</span> разрешать</span></label>
+  <label class="option"><input type="radio" name="q34" value="b"><span><span class="letter">b)</span> избегать</span></label>
+  <label class="option"><input type="radio" name="q34" value="c"><span><span class="letter">c)</span> одалживать</span></label>
+  <label class="option"><input type="radio" name="q34" value="d"><span><span class="letter">d)</span> улучшать</span></label>
+  <label class="option"><input type="radio" name="q34" value="e"><span><span class="letter">e)</span> спорить</span></label>
+</section>
+<section class="question" id="q35">
+  <div class="qtop"><div class="num">35</div><div><div class="word">instead</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q35" value="a"><span><span class="letter">a)</span> иногда</span></label>
+  <label class="option"><input type="radio" name="q35" value="b"><span><span class="letter">b)</span> обычно</span></label>
+  <label class="option"><input type="radio" name="q35" value="c"><span><span class="letter">c)</span> почти</span></label>
+  <label class="option"><input type="radio" name="q35" value="d"><span><span class="letter">d)</span> рядом</span></label>
+  <label class="option"><input type="radio" name="q35" value="e"><span><span class="letter">e)</span> вместо</span></label>
+</section>
+<section class="question" id="q36">
+  <div class="qtop"><div class="num">36</div><div><div class="word">although</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q36" value="a"><span><span class="letter">a)</span> хотя</span></label>
+  <label class="option"><input type="radio" name="q36" value="b"><span><span class="letter">b)</span> потому что</span></label>
+  <label class="option"><input type="radio" name="q36" value="c"><span><span class="letter">c)</span> поэтому</span></label>
+  <label class="option"><input type="radio" name="q36" value="d"><span><span class="letter">d)</span> вместо</span></label>
+  <label class="option"><input type="radio" name="q36" value="e"><span><span class="letter">e)</span> между</span></label>
+</section>
+<section class="question" id="q37">
+  <div class="qtop"><div class="num">37</div><div><div class="word">during</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q37" value="a"><span><span class="letter">a)</span> после</span></label>
+  <label class="option"><input type="radio" name="q37" value="b"><span><span class="letter">b)</span> во время</span></label>
+  <label class="option"><input type="radio" name="q37" value="c"><span><span class="letter">c)</span> перед</span></label>
+  <label class="option"><input type="radio" name="q37" value="d"><span><span class="letter">d)</span> вместо</span></label>
+  <label class="option"><input type="radio" name="q37" value="e"><span><span class="letter">e)</span> рядом</span></label>
+</section>
+<section class="question" id="q38">
+  <div class="qtop"><div class="num">38</div><div><div class="word">without</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q38" value="a"><span><span class="letter">a)</span> вместе с</span></label>
+  <label class="option"><input type="radio" name="q38" value="b"><span><span class="letter">b)</span> между</span></label>
+  <label class="option"><input type="radio" name="q38" value="c"><span><span class="letter">c)</span> без</span></label>
+  <label class="option"><input type="radio" name="q38" value="d"><span><span class="letter">d)</span> после</span></label>
+  <label class="option"><input type="radio" name="q38" value="e"><span><span class="letter">e)</span> из-за</span></label>
+</section>
+<section class="question" id="q39">
+  <div class="qtop"><div class="num">39</div><div><div class="word">between</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q39" value="a"><span><span class="letter">a)</span> рядом</span></label>
+  <label class="option"><input type="radio" name="q39" value="b"><span><span class="letter">b)</span> внутри</span></label>
+  <label class="option"><input type="radio" name="q39" value="c"><span><span class="letter">c)</span> снаружи</span></label>
+  <label class="option"><input type="radio" name="q39" value="d"><span><span class="letter">d)</span> между</span></label>
+  <label class="option"><input type="radio" name="q39" value="e"><span><span class="letter">e)</span> после</span></label>
+</section>
+<section class="question" id="q40">
+  <div class="qtop"><div class="num">40</div><div><div class="word">difference</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q40" value="a"><span><span class="letter">a)</span> вопрос</span></label>
+  <label class="option"><input type="radio" name="q40" value="b"><span><span class="letter">b)</span> ответ</span></label>
+  <label class="option"><input type="radio" name="q40" value="c"><span><span class="letter">c)</span> совет</span></label>
+  <label class="option"><input type="radio" name="q40" value="d"><span><span class="letter">d)</span> причина</span></label>
+  <label class="option"><input type="radio" name="q40" value="e"><span><span class="letter">e)</span> разница</span></label>
+</section>
+<section class="question" id="q41">
+  <div class="qtop"><div class="num">41</div><div><div class="word">remember</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q41" value="a"><span><span class="letter">a)</span> помнить</span></label>
+  <label class="option"><input type="radio" name="q41" value="b"><span><span class="letter">b)</span> решать</span></label>
+  <label class="option"><input type="radio" name="q41" value="c"><span><span class="letter">c)</span> избегать</span></label>
+  <label class="option"><input type="radio" name="q41" value="d"><span><span class="letter">d)</span> позволять</span></label>
+  <label class="option"><input type="radio" name="q41" value="e"><span><span class="letter">e)</span> улучшать</span></label>
+</section>
+<section class="question" id="q42">
+  <div class="qtop"><div class="num">42</div><div><div class="word">forget</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q42" value="a"><span><span class="letter">a)</span> объяснять</span></label>
+  <label class="option"><input type="radio" name="q42" value="b"><span><span class="letter">b)</span> забывать</span></label>
+  <label class="option"><input type="radio" name="q42" value="c"><span><span class="letter">c)</span> соглашаться</span></label>
+  <label class="option"><input type="radio" name="q42" value="d"><span><span class="letter">d)</span> занимать</span></label>
+  <label class="option"><input type="radio" name="q42" value="e"><span><span class="letter">e)</span> выбирать</span></label>
+</section>
+<section class="question" id="q43">
+  <div class="qtop"><div class="num">43</div><div><div class="word">already</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q43" value="a"><span><span class="letter">a)</span> снова</span></label>
+  <label class="option"><input type="radio" name="q43" value="b"><span><span class="letter">b)</span> ещё не</span></label>
+  <label class="option"><input type="radio" name="q43" value="c"><span><span class="letter">c)</span> уже</span></label>
+  <label class="option"><input type="radio" name="q43" value="d"><span><span class="letter">d)</span> потом</span></label>
+  <label class="option"><input type="radio" name="q43" value="e"><span><span class="letter">e)</span> редко</span></label>
+</section>
+<section class="question" id="q44">
+  <div class="qtop"><div class="num">44</div><div><div class="word">still</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q44" value="a"><span><span class="letter">a)</span> вместо</span></label>
+  <label class="option"><input type="radio" name="q44" value="b"><span><span class="letter">b)</span> почти</span></label>
+  <label class="option"><input type="radio" name="q44" value="c"><span><span class="letter">c)</span> достаточно</span></label>
+  <label class="option"><input type="radio" name="q44" value="d"><span><span class="letter">d)</span> всё ещё</span></label>
+  <label class="option"><input type="radio" name="q44" value="e"><span><span class="letter">e)</span> сразу</span></label>
+</section>
+<section class="question" id="q45">
+  <div class="qtop"><div class="num">45</div><div><div class="word">against</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q45" value="a"><span><span class="letter">a)</span> после</span></label>
+  <label class="option"><input type="radio" name="q45" value="b"><span><span class="letter">b)</span> между</span></label>
+  <label class="option"><input type="radio" name="q45" value="c"><span><span class="letter">c)</span> рядом</span></label>
+  <label class="option"><input type="radio" name="q45" value="d"><span><span class="letter">d)</span> вместе</span></label>
+  <label class="option"><input type="radio" name="q45" value="e"><span><span class="letter">e)</span> против</span></label>
+</section>
+<section class="question" id="q46">
+  <div class="qtop"><div class="num">46</div><div><div class="word">perhaps</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q46" value="a"><span><span class="letter">a)</span> возможно</span></label>
+  <label class="option"><input type="radio" name="q46" value="b"><span><span class="letter">b)</span> обязательно</span></label>
+  <label class="option"><input type="radio" name="q46" value="c"><span><span class="letter">c)</span> никогда</span></label>
+  <label class="option"><input type="radio" name="q46" value="d"><span><span class="letter">d)</span> всегда</span></label>
+  <label class="option"><input type="radio" name="q46" value="e"><span><span class="letter">e)</span> снова</span></label>
+</section>
+<section class="question" id="q47">
+  <div class="qtop"><div class="num">47</div><div><div class="word">happen</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q47" value="a"><span><span class="letter">a)</span> помогать</span></label>
+  <label class="option"><input type="radio" name="q47" value="b"><span><span class="letter">b)</span> случаться</span></label>
+  <label class="option"><input type="radio" name="q47" value="c"><span><span class="letter">c)</span> объяснять</span></label>
+  <label class="option"><input type="radio" name="q47" value="d"><span><span class="letter">d)</span> решать</span></label>
+  <label class="option"><input type="radio" name="q47" value="e"><span><span class="letter">e)</span> ждать</span></label>
+</section>
+<section class="question" id="q48">
+  <div class="qtop"><div class="num">48</div><div><div class="word">believe</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q48" value="a"><span><span class="letter">a)</span> забывать</span></label>
+  <label class="option"><input type="radio" name="q48" value="b"><span><span class="letter">b)</span> проверять</span></label>
+  <label class="option"><input type="radio" name="q48" value="c"><span><span class="letter">c)</span> верить</span></label>
+  <label class="option"><input type="radio" name="q48" value="d"><span><span class="letter">d)</span> разрешать</span></label>
+  <label class="option"><input type="radio" name="q48" value="e"><span><span class="letter">e)</span> выбирать</span></label>
+</section>
+<section class="question" id="q49">
+  <div class="qtop"><div class="num">49</div><div><div class="word">matter</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q49" value="a"><span><span class="letter">a)</span> ошибка</span></label>
+  <label class="option"><input type="radio" name="q49" value="b"><span><span class="letter">b)</span> выбор</span></label>
+  <label class="option"><input type="radio" name="q49" value="c"><span><span class="letter">c)</span> встреча</span></label>
+  <label class="option"><input type="radio" name="q49" value="d"><span><span class="letter">d)</span> дело / иметь значение</span></label>
+  <label class="option"><input type="radio" name="q49" value="e"><span><span class="letter">e)</span> совет</span></label>
+</section>
+<section class="question" id="q50">
+  <div class="qtop"><div class="num">50</div><div><div class="word">receive</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q50" value="a"><span><span class="letter">a)</span> отправлять</span></label>
+  <label class="option"><input type="radio" name="q50" value="b"><span><span class="letter">b)</span> покупать</span></label>
+  <label class="option"><input type="radio" name="q50" value="c"><span><span class="letter">c)</span> терять</span></label>
+  <label class="option"><input type="radio" name="q50" value="d"><span><span class="letter">d)</span> занимать</span></label>
+  <label class="option"><input type="radio" name="q50" value="e"><span><span class="letter">e)</span> получать</span></label>
+</section>
+<section class="question" id="q51">
+  <div class="qtop"><div class="num">51</div><div><div class="word">quite</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q51" value="a"><span><span class="letter">a)</span> довольно</span></label>
+  <label class="option"><input type="radio" name="q51" value="b"><span><span class="letter">b)</span> никогда</span></label>
+  <label class="option"><input type="radio" name="q51" value="c"><span><span class="letter">c)</span> сразу</span></label>
+  <label class="option"><input type="radio" name="q51" value="d"><span><span class="letter">d)</span> вместо</span></label>
+  <label class="option"><input type="radio" name="q51" value="e"><span><span class="letter">e)</span> между</span></label>
+</section>
+<section class="question" id="q52">
+  <div class="qtop"><div class="num">52</div><div><div class="word">alone</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q52" value="a"><span><span class="letter">a)</span> вместе</span></label>
+  <label class="option"><input type="radio" name="q52" value="b"><span><span class="letter">b)</span> один / в одиночку</span></label>
+  <label class="option"><input type="radio" name="q52" value="c"><span><span class="letter">c)</span> рядом</span></label>
+  <label class="option"><input type="radio" name="q52" value="d"><span><span class="letter">d)</span> снаружи</span></label>
+  <label class="option"><input type="radio" name="q52" value="e"><span><span class="letter">e)</span> поздно</span></label>
+</section>
+<section class="question" id="q53">
+  <div class="qtop"><div class="num">53</div><div><div class="word">personal</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q53" value="a"><span><span class="letter">a)</span> общий</span></label>
+  <label class="option"><input type="radio" name="q53" value="b"><span><span class="letter">b)</span> рабочий</span></label>
+  <label class="option"><input type="radio" name="q53" value="c"><span><span class="letter">c)</span> личный</span></label>
+  <label class="option"><input type="radio" name="q53" value="d"><span><span class="letter">d)</span> случайный</span></label>
+  <label class="option"><input type="radio" name="q53" value="e"><span><span class="letter">e)</span> опасный</span></label>
+</section>
+<section class="question" id="q54">
+  <div class="qtop"><div class="num">54</div><div><div class="word">similar</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q54" value="a"><span><span class="letter">a)</span> разный</span></label>
+  <label class="option"><input type="radio" name="q54" value="b"><span><span class="letter">b)</span> готовый</span></label>
+  <label class="option"><input type="radio" name="q54" value="c"><span><span class="letter">c)</span> важный</span></label>
+  <label class="option"><input type="radio" name="q54" value="d"><span><span class="letter">d)</span> похожий</span></label>
+  <label class="option"><input type="radio" name="q54" value="e"><span><span class="letter">e)</span> трудный</span></label>
+</section>
+<section class="question" id="q55">
+  <div class="qtop"><div class="num">55</div><div><div class="word">include</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q55" value="a"><span><span class="letter">a)</span> исключать</span></label>
+  <label class="option"><input type="radio" name="q55" value="b"><span><span class="letter">b)</span> забывать</span></label>
+  <label class="option"><input type="radio" name="q55" value="c"><span><span class="letter">c)</span> проверять</span></label>
+  <label class="option"><input type="radio" name="q55" value="d"><span><span class="letter">d)</span> позволять</span></label>
+  <label class="option"><input type="radio" name="q55" value="e"><span><span class="letter">e)</span> включать</span></label>
+</section>
+<section class="question" id="q56">
+  <div class="qtop"><div class="num">56</div><div><div class="word">provide</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q56" value="a"><span><span class="letter">a)</span> предоставлять</span></label>
+  <label class="option"><input type="radio" name="q56" value="b"><span><span class="letter">b)</span> избегать</span></label>
+  <label class="option"><input type="radio" name="q56" value="c"><span><span class="letter">c)</span> забывать</span></label>
+  <label class="option"><input type="radio" name="q56" value="d"><span><span class="letter">d)</span> сравнивать</span></label>
+  <label class="option"><input type="radio" name="q56" value="e"><span><span class="letter">e)</span> выбирать</span></label>
+</section>
+<section class="question" id="q57">
+  <div class="qtop"><div class="num">57</div><div><div class="word">compare</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q57" value="a"><span><span class="letter">a)</span> объяснять</span></label>
+  <label class="option"><input type="radio" name="q57" value="b"><span><span class="letter">b)</span> сравнивать</span></label>
+  <label class="option"><input type="radio" name="q57" value="c"><span><span class="letter">c)</span> позволять</span></label>
+  <label class="option"><input type="radio" name="q57" value="d"><span><span class="letter">d)</span> занимать</span></label>
+  <label class="option"><input type="radio" name="q57" value="e"><span><span class="letter">e)</span> улучшать</span></label>
+</section>
+<section class="question" id="q58">
+  <div class="qtop"><div class="num">58</div><div><div class="word">support</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q58" value="a"><span><span class="letter">a)</span> решение</span></label>
+  <label class="option"><input type="radio" name="q58" value="b"><span><span class="letter">b)</span> ошибка</span></label>
+  <label class="option"><input type="radio" name="q58" value="c"><span><span class="letter">c)</span> поддержка / поддерживать</span></label>
+  <label class="option"><input type="radio" name="q58" value="d"><span><span class="letter">d)</span> разница</span></label>
+  <label class="option"><input type="radio" name="q58" value="e"><span><span class="letter">e)</span> причина</span></label>
+</section>
+<section class="question" id="q59">
+  <div class="qtop"><div class="num">59</div><div><div class="word">safe</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q59" value="a"><span><span class="letter">a)</span> личный</span></label>
+  <label class="option"><input type="radio" name="q59" value="b"><span><span class="letter">b)</span> тихий</span></label>
+  <label class="option"><input type="radio" name="q59" value="c"><span><span class="letter">c)</span> дешёвый</span></label>
+  <label class="option"><input type="radio" name="q59" value="d"><span><span class="letter">d)</span> безопасный</span></label>
+  <label class="option"><input type="radio" name="q59" value="e"><span><span class="letter">e)</span> голодный</span></label>
+</section>
+<section class="question" id="q60">
+  <div class="qtop"><div class="num">60</div><div><div class="word">available</div><div class="hint">Выберите самый близкий смысл.</div></div></div>
+  <label class="option"><input type="radio" name="q60" value="a"><span><span class="letter">a)</span> занятый</span></label>
+  <label class="option"><input type="radio" name="q60" value="b"><span><span class="letter">b)</span> поздний</span></label>
+  <label class="option"><input type="radio" name="q60" value="c"><span><span class="letter">c)</span> готовый</span></label>
+  <label class="option"><input type="radio" name="q60" value="d"><span><span class="letter">d)</span> осторожный</span></label>
+  <label class="option"><input type="radio" name="q60" value="e"><span><span class="letter">e)</span> доступный</span></label>
+</section>
+  </form>
+  <section class="result-card" id="result-block">
+    <h2>Строка ответов</h2>
+    <p class="small">Нажмите кнопку внизу. Поле выделится для копирования. Пропущенные вопросы в строку не попадают.</p>
+    <textarea id="answer-string" readonly placeholder="Здесь появится строка вида 1a2b4d"></textarea>
+    <p class="small" id="count-line">Отмечено: 0 из 60</p>
+  </section>
+</main>
+<div class="actions">
+  <button id="make-string" class="primary" type="button">Сформировать строку ответов</button>
+</div>
+<script>
+(function(){
+  var TOTAL = 60;
+  var STORAGE_KEY = 'omnirevolve-vocab-a1a2-echeck-7f3k9d-v1';
+  var form = document.getElementById('quiz');
+  var output = document.getElementById('answer-string');
+  var countLine = document.getElementById('count-line');
+  var button = document.getElementById('make-string');
+  var resultBlock = document.getElementById('result-block');
+
+  function readState(){
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}') || {}; }
+    catch(e){ return {}; }
+  }
+
+  function saveState(state){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+    catch(e){ }
+  }
+
+  function collectStateFromForm(){
+    var state = {};
+    for(var i=1; i<=TOTAL; i++){
+      var chosen = form.querySelector('input[name="q' + i + '"]:checked');
+      if(chosen) state[String(i)] = chosen.value;
+    }
+    return state;
+  }
+
+  function makeAnswerString(state){
+    var parts = [];
+    for(var i=1; i<=TOTAL; i++){
+      var value = state[String(i)];
+      if(value) parts.push(String(i) + value);
+    }
+    return parts.join('');
+  }
+
+  function updateOutput(){
+    var state = collectStateFromForm();
+    saveState(state);
+    var s = makeAnswerString(state);
+    output.value = s;
+    countLine.textContent = 'Отмечено: ' + Object.keys(state).length + ' из ' + TOTAL;
+    return s;
+  }
+
+  function restoreState(){
+    var state = readState();
+    for(var key in state){
+      if(Object.prototype.hasOwnProperty.call(state,key)){
+        var input = form.querySelector('input[name="q' + key + '"][value="' + state[key] + '"]');
+        if(input) input.checked = true;
+      }
+    }
+    updateOutput();
+  }
+
+  form.addEventListener('change', updateOutput);
+  button.addEventListener('click', function(){
+    updateOutput();
+    resultBlock.scrollIntoView({behavior:'smooth', block:'center'});
+    setTimeout(function(){
+      output.focus();
+      output.select();
+      try { output.setSelectionRange(0, output.value.length); } catch(e) {}
+    }, 350);
+  });
+  restoreState();
+})();
+</script>
+</body>
+</html>
